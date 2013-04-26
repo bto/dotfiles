@@ -1,0 +1,11 @@
+#!/bin/sh
+BIN_DIR=$(cd $(dirname $0);pwd)
+TOP_DIR=$(cd $BIN_DIR/..;pwd)
+ETC_DIR=$TOP_DIR/etc
+
+for f in $ETC_DIR/*; do
+  base=$(basename $f)
+  if [ ! -e $HOME/.$base ]; then
+    ln -s $f $HOME/.$base
+  fi
+done

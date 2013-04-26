@@ -1,0 +1,5 @@
+# emacs like key bind
+bindkey -e
+
+# backspace
+stty erase ^H

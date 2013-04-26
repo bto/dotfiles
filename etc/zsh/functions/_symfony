@@ -1,0 +1,231 @@
+#compdef symfony
+
+typeset -A opt_args
+
+_sfapps()
+{
+    _wanted application expl 'application' compadd $(command ls -1 apps 2>/dev/null| sed -e 's/ /\\ /g')
+}
+
+_sffixtures()
+{
+    local datapath
+    datapath=$(command pwd| sed -e 's#$#/data#')
+    _files -W $datapath
+}
+
+_sfmodules()
+{
+    _wanted module expl 'module' compadd $(command ls -1 apps/$words[2]/modules 2>/dev/null| sed -e '/^.*:$/d')
+}
+
+_sfmodels()
+{
+      _wanted model expl 'model' compadd $(command find lib/model -maxdepth 1 -name '*.php' -exec basename {} .php \; | grep -v Peer\$  )
+}
+
+_sfdoctrinemodels()
+{
+      _wanted model expl 'model' compadd $(command find lib/model/doctrine -maxdepth 1 -name '*.class.php' -exec basename {} .class.php \; | grep -v Peer\$  )
+}
+
+_sfmodelslc()
+{
+      compadd $(command find lib/model -maxdepth 1 -name '*.php' -exec basename {} .php \; | grep -v Peer\$ | tr "[:upper:]" "[:lower:]" )
+}
+
+_sfchannelname()
+{
+#  compset -S '[^:]*';
+  compadd -S  '' symfony/ pear/
+}
+
+_sfenvironments()
+{
+#  compadd dev prod test
+  compadd $(command cat apps/$words[2]/config/settings.yml | grep '^\w*:$' | sed -e 's/:$//' | grep -v all)
+}
+
+_sfsyncenvironments()
+{
+  _wanted environment expl 'environment' compadd $(command cat config/properties.ini 2>/dev/null | awk "/\[/, /\]/" | sed -e 's/^\[//' -e 's/\]$//' -e '/^symfony$/d')
+}
+
+_sfpluginsNoCache()
+{
+  _wanted plugins expl 'available plugins' compadd $(command pear list-all -c symfony | sed -E '/^symfony/!d' | sed -E '/^symfony\/symfony/d' | sed -E 's/^symfony\/([a-zA-Z]+).*/\1/g')
+}
+
+_sfMakePluginCache()
+{
+  command pear list-all -c symfony | sed -E '/^symfony/!d' | sed -E '/^symfony\/symfony/d' | sed -E 's/^symfony\/([a-zA-Z]+).*/\1/g' >| ~/.zsh/cache/sfPlugins
+}
+
+
+_sfgetpluginlist()
+{
+  local cache_policy
+  zstyle -s ":completion:${curcontext}:" cache-policy cache_policy
+  if [[ -z "$cache_policy" ]]; then
+    zstyle ":completion:${curcontext}:" cache-policy _sfplugins_caching_policy
+  fi
+  
+  typeset -g -a _sfpluginlist
+  if ( (( #_sfpluginlist == 0 )) || _cache_invalid sfplugins) \
+       && ! _retrieve_cache sfplugins; then
+    _sfpluginlist=(${(f)"$(command pear list-all -c symfony | sed -E '/^symfony/!d' | sed -E '/^symfony\/symfony/d' | sed -E 's/^symfony\/([a-zA-Z]+).*/\1/g')"})
+    _store_cache sfplugins _sfpluginlist
+  fi
+  
+  sfpluginlist=(${_sfpluginlist#*	})
+  
+}
+
+_sfplugins_caching_policy()
+{
+  # rebuild if cache is more than a week old
+  oldp=( "$1"(Nmw+1) )
+  (( $#oldp ))
+}
+
+_sfPluginAdd()
+{
+  compadd $sfPlugins[@]
+}
+
+_symfony()
+{
+local -a _1st_arguments
+_1st_arguments=(
+  'clear-cache:clear cached information'
+  'cc:clear cached information'
+  
+  'clear-controllers:clear the web directory of all non production controllers'
+
+  'fix-perms:fix directories permissions'
+  
+  'freeze:freeze symfony libraries to a PEAR release'
+  'unfreeze:revert the freeze command'
+  
+
+  'init-project:initialize a new symfony project'
+  'new:initialize a new symfony project'
+
+  'init-app:initialize a new symfony application'
+  'app:initialize a new symfony application'
+
+  'init-module:initialize a new symfony module'
+  'module:initialize a new symfony module'
+
+  'init-batch:initialize a new batch'
+  'batch:initialize a new batch'
+
+  'init-controller:initialize a new controller'
+  'controller:initialize a new controller'
+  
+
+  'plugin-install:install a new plugin'
+  'plugin-uninstall:uninstall a plugin'
+  'plugin-upgrade:upgrade a plugin'
+  'plugin-upgrade-all:upgrade all plugins'
+
+  'doctrine-import:convert a propel schema in sfDoctrine format'
+  'doctrine-build-model:create sfDoctrine classes from schema.yml'
+  'doctrine-generate-crud:generate a new sfDoctrine CRUD module'
+  'doctrine-init-admin:initialize a new sfDoctrine admin module'
+
+  'propel-build-db:create database for current model'
+  'propel-build-model:create classes for current model'
+  'propel-build-schema:create schema.xml from existing database'
+  'propel-build-sql:create sql for current model'
+  'propel-build-all:propel-build-schema, propel-build-sql and propel-insert-sql'
+  'propel-load-data:loads all data from fixtures'
+  'propel-build-all-load:executes propel-build-all then propel-load-data'
+  
+  'propel-convert-yml-schema:create schema.xml from schema.yml'
+  'propel-convert-xml-schema:create schema.yml from schema.xml'
+  
+  'propel-generate-crud:generate a new propel CRUD module'
+  
+  'propel-init-admin:initialize a new propel admin module'
+  'propel-init-crud:initialize a new propel CRUD module'
+  
+  'propel-insert-sql:insert sql for current model'
+  
+  'disable:forwards the user to the unavailable module'
+  'enable:enables the application and clears the cache'
+  
+  'purge-logs:clears the logs files in the log directory'
+  'rotate-log:rotation of a log file'
+  
+  'server:launch symfony web server'
+  'sync:synchronise project with another machine'
+  'test:launch project test suite'
+)
+
+#local -a _tasks
+#_tasks=$(command symfony -T | sed -e '/pakeGetopt:/d' -e 's/^  //g' -e 's/[ ]*>/:/g' -e '/^$/d' -e '/:$/d' -e '/=/d' -e 's/: /:/g'  )
+
+  local context state line expl
+  local -A opt_args 
+
+  _arguments \
+    '(-T --tasks)'{-T,--tasks}'[list of the symfony tasks]' \
+    '(-V --version)'{-V,--version}'[version]' \
+    '*:: :->subcmds' && return 0
+
+  if (( CURRENT == 1 )); then
+    _describe -t commands "symfony commands" _1st_arguments -V1
+    return
+  fi
+
+  local -a sfpluginlist
+
+case "$words[1]" in
+
+    init-app|app)
+      _message 'application name'
+      compadd main;;
+    
+    init-project|new)
+      _message 'new project name';;
+    
+    init-module|module)
+        _arguments :application:_sfapps :'new module name':;;
+    
+    init-batch|batch)
+        _arguments :'skeleton name':"compadd default rotate";;
+    
+    init-controller|controller)
+        _arguments :application:_sfapps :environment:_sfenvironments :"script name": :"debug?":"compadd true false";;
+    
+    rotate-log|enable|disable)
+        _arguments :application:_sfapps :environment:_sfenvironments;;
+    
+    propel-load-data|propel-build-all-load)
+        _arguments :application:_sfapps :environment:_sfenvironments :fixtures:_sffixtures;;
+    
+    server|test)
+        _arguments :application:_sfapps;;
+    
+    plugin-install|plugin-uninstall|plugin-upgrade)
+      _sfgetpluginlist
+      _arguments :location:"compadd global local" :plug-in:"compadd -a sfpluginlist";;
+    
+    clear-cache|cc)
+        _arguments :application:_sfapps :what:"compadd template config";;
+      
+    sync)
+      _arguments :environment:_sfsyncenvironments :"real run?":"compadd go ''";;
+    
+    propel-init-crud|propel-init-admin|propel-generate-crud)
+        _arguments :application:_sfapps :module: :model:_sfmodels;;
+
+    doctrine-init-admin|doctrine-generate-crud)
+        _arguments :application:_sfapps :module: :model:_sfdoctrinemodels;;
+
+esac
+return 1
+}
+
+_symfony "$@"
