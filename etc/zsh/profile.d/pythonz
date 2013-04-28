@@ -1,1 +1,10 @@
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+if [ -s $HOME/.pythonz/etc/bashrc ]; then
+  source $HOME/.pythonz/etc/bashrc
+fi
+
+add_env PATH $HOME/.pythonz/pythons/current/bin
+add_env MANPATH $HOME/.pythonz/pythons/current/share/man
+add_env LD_LIBRARY_PATH $HOME/.pythonz/pythons/lib
+add_env LIBRARY_PATH $HOME/.pythonz/pythons/lib
+add_env C_INCLUDE_PATH $HOME/.pythonz/pythons/include
+add_env PKG_CONFIG_PATH $HOME/.pythonz/pythons/lib/pkgconfig

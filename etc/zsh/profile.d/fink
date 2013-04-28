@@ -1,0 +1,17 @@
+# PATH
+add_env PATH "/sw/bin" "/sw/sbin"
+
+# MANPATH
+add_env MANPATH "/sw/share/man"
+
+# LD_LIBRARY_PATH
+add_env LD_LIBRARY_PATH "/sw/lib"
+
+# LIBRARY_PATH
+add_env LIBRARY_PATH "/sw/lib"
+
+# C_INCLUDE_PATH
+add_env C_INCLUDE_PATH "/sw/include"
+
+# PKG_CONFIG_PATH
+add_env PKG_CONFIG_PATH "/sw/lib/pkgconfig"

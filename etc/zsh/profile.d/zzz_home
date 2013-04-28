@@ -1,0 +1,31 @@
+# PATH
+add_env PATH "${HOME}/opt/*/bin" "${HOME}/opt/*/sbin"
+add_env PATH "${HOME}/bin" "${HOME}/sbin"
+clean_env PATH
+
+# MANPATH
+add_env MANPATH "${HOME}/opt/*/man" "${HOME}/opt/*/share/man"
+add_env MANPATH "${HOME}/opt/*/man/ja" "${HOME}/opt/*/share/man/ja"
+add_env MANPATH "${HOME}/share/man" "${HOME}/man"
+add_env MANPATH "${HOME}/share/man/ja" "${HOME}/man/ja"
+clean_env MANPATH
+
+# LD_LIBRARY_PATH
+add_env LD_LIBRARY_PATH "${HOME}/opt/*/lib"
+add_env LD_LIBRARY_PATH "${HOME}/lib"
+clean_env LD_LIBRARY_PATH
+
+# LIBRARY_PATH
+add_env LIBRARY_PATH "${HOME}/opt/*/lib"
+add_env LIBRARY_PATH "${HOME}/lib"
+clean_env LIBRARY_PATH
+
+# C_INCLUDE_PATH
+add_env C_INCLUDE_PATH "${HOME}/opt/*/include"
+add_env C_INCLUDE_PATH "${HOME}/include"
+clean_env C_INCLUDE_PATH
+
+# PKG_CONFIG_PATH
+add_env PKG_CONFIG_PATH "${HOME}/opt/*/lib/pkgconfig"
+add_env PKG_CONFIG_PATH "${HOME}/lib/pkgconfig"
+clean_env PKG_CONFIG_PATH

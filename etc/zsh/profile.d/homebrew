@@ -1,13 +1,24 @@
-if [ -d $(brew --prefix coreutils)/aliases ]; then
-  source /usr/local/Cellar/coreutils/*/aliases
-  alias ls='gls -F --color=auto'
+# check homebrew installed
+type brew > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+  return
 fi
 
-if [ -d /usr/local/Cellar/findutils ]; then
+# coreutils
+if [ -d $(brew --prefix coreutils)/libexec/gnubin ]; then
+  add_env PATH $(brew --prefix coreutils)/libexec/gnubin
+fi
+if [ -d $(brew --prefix coreutils)/libexec/gnuman ]; then
+  add_env MANPATH $(brew --prefix coreutils)/libexec/gnuman
+fi
+
+# findutils
+if [ -d $(brew --cellar findutils) ]; then
   alias find=gfind
   alias xargs=gxargs
 fi
 
-if [ -d /usr/local/Cellar/gnu-sed ]; then
+# gnu-sed
+if [ -d $(brew --cellar gnu-sed) ]; then
   alias sed=gsed
 fi

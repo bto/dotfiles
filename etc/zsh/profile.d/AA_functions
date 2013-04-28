@@ -2,6 +2,7 @@
 # add_env 変数名 文字列...
 #
 #   変数に":"区切りで値を追加する。$PATHとかそんなやつ。
+#   値は先頭に追加される。
 #   与えられた文字列のメタキャラクタを展開する。/usr/*/bin みたいな。
 #   値がディレクトリの場合にだけ追加する。ディレクトリじゃない場合は追加しない。
 #
@@ -20,7 +21,7 @@ function add_env(){
       fi
 
       if [ -d $i ]; then
-        eval $env_name=\$$env_name:$i
+        eval $env_name=$i:\$$env_name
       fi
     done
   done
