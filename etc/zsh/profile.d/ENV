@@ -65,6 +65,17 @@ add_env C_INCLUDE_PATH "/opt/local/*/include"
 clean_env C_INCLUDE_PATH
 export C_INCLUDE_PATH
 
+# CPLUS_INCLUDE_PATH の設定
+CPLUS_INCLUDE_PATH=
+add_env CPLUS_INCLUDE_PATH "/include"
+add_env CPLUS_INCLUDE_PATH "/usr/include"
+add_env CPLUS_INCLUDE_PATH "/usr/*/include"
+add_env CPLUS_INCLUDE_PATH "/usr/local/*/include"
+add_env CPLUS_INCLUDE_PATH "/opt/*/include"
+add_env CPLUS_INCLUDE_PATH "/opt/local/*/include"
+clean_env CPLUS_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH
+
 # PKG_CONFIG_PATH の設定
 PKG_CONFIG_PATH=
 add_env PKG_CONFIG_PATH "/lib/pkgconfig"

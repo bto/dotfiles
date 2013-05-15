@@ -13,5 +13,8 @@ add_env LIBRARY_PATH "/sw/lib"
 # C_INCLUDE_PATH
 add_env C_INCLUDE_PATH "/sw/include"
 
+# CPLUS_INCLUDE_PATH
+add_env CPLUS_INCLUDE_PATH "/sw/include"
+
 # PKG_CONFIG_PATH
 add_env PKG_CONFIG_PATH "/sw/lib/pkgconfig"

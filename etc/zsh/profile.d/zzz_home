@@ -25,6 +25,11 @@ add_env C_INCLUDE_PATH "${HOME}/opt/*/include"
 add_env C_INCLUDE_PATH "${HOME}/include"
 clean_env C_INCLUDE_PATH
 
+# CPLUS_INCLUDE_PATH
+add_env CPLUS_INCLUDE_PATH "${HOME}/opt/*/include"
+add_env CPLUS_INCLUDE_PATH "${HOME}/include"
+clean_env CPLUS_INCLUDE_PATH
+
 # PKG_CONFIG_PATH
 add_env PKG_CONFIG_PATH "${HOME}/opt/*/lib/pkgconfig"
 add_env PKG_CONFIG_PATH "${HOME}/lib/pkgconfig"
