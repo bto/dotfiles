@@ -22,3 +22,9 @@ fi
 if [ -d $(brew --cellar gnu-sed) ]; then
   alias sed=gsed
 fi
+
+# z
+if [ -f $(brew --prefix`/etc/profile.d/z.sh) ]; then
+function precmd () {
+  z --add "$(pwd -P)"
+}
