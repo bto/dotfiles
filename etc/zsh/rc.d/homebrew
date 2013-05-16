@@ -1,0 +1,26 @@
+# check homebrew installed
+type brew > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+  return
+fi
+
+# findutils
+if [ -d $(brew --cellar findutils) ]; then
+  alias find=gfind
+  alias xargs=gxargs
+fi
+
+# gnu-sed
+if [ -d $(brew --cellar gnu-sed) ]; then
+  alias sed=gsed
+fi
+
+# z
+if [ ! -f $(brew --prefix)/etc/profile.d/z.sh ]; then
+  return
+fi
+
+source $(brew --prefix)/etc/profile.d/z.sh
+function precmd () {
+  z --add "$(pwd -P)"
+}
