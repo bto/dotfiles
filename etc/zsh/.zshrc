@@ -7,7 +7,9 @@ done
 
 # 他のディレクトリの .zsh?*/.zshrc を読み込む
 for f in ~/.zsh?*/.zshrc; do
-  source $f
+  if [ -f $f ]; then
+    source $f
+  fi
 done
 
 # 他のディレクトリの .zsh?*/rc.d を読み込む

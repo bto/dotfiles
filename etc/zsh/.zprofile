@@ -7,7 +7,9 @@ done
 
 # 他のディレクトリの .zsh?*/.zprofile を読み込む
 for f in ~/.zsh?*/.zprofile; do
-  source $f
+  if [ -f $f ]; then
+    source $f
+  fi
 done
 
 # 他のディレクトリの .zsh?*/profile.d を読み込む
