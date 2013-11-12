@@ -63,11 +63,6 @@ nd(){
     : ~$name
 }
 
-# screen の shelltitle用
-precmd(){
-    echo -n '\ek\e\'
-}
-
 # screen 用の chpwd()
 # screen の時は chpwd(screen_chpwd) のようにして使う
 screen_chpwd(){
