@@ -28,19 +28,6 @@ xalias()
     fi
 }
 
-# less
-xalias less jless
-xalias less lv
-
-# vi
-xalias vi vim
-xalias vi nvi
-xalias vi jvim
-
-# ftp
-xalias ftp ncftp
-xalias ftp lftp
-
 # screen とか kterm のタイトルを変更する
 title(){
     print -Pn "\e]0;$*\a"
