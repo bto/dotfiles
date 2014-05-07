@@ -5,9 +5,9 @@ if [ $? -ne 0 ]; then
 fi
 
 # coreutils
-if [ -d $(brew --prefix coreutils)/libexec/gnubin ]; then
-  add_env PATH $(brew --prefix coreutils)/libexec/gnubin
-fi
-if [ -d $(brew --prefix coreutils)/libexec/gnuman ]; then
-  add_env MANPATH $(brew --prefix coreutils)/libexec/gnuman
-fi
+add_env PATH $(brew --prefix coreutils)/libexec/gnubin
+add_env MANPATH $(brew --prefix coreutils)/libexec/gnuman
+
+# gnu-sed
+add_env PATH $(brew --prefix gnu-sed)/libexec/gnubin
+add_env MANPATH $(brew --prefix gnu-sed)/libexec/gnuman

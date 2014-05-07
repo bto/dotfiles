@@ -5,21 +5,15 @@ if [ $? -ne 0 ]; then
 fi
 
 # findutils
-if [ -d $(brew --cellar findutils) ]; then
+if [ -d $(brew --prefix findutils) ]; then
   alias find=gfind
   alias xargs=gxargs
-fi
-
-# gnu-sed
-if [ -d $(brew --cellar gnu-sed) ]; then
-  alias sed=gsed
 fi
 
 # z
 if [ ! -f $(brew --prefix)/etc/profile.d/z.sh ]; then
   return
 fi
-
 _Z_CMD=j
 source $(brew --prefix)/etc/profile.d/z.sh
 function _precmd_z() {
