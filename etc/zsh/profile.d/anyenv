@@ -1,0 +1,1 @@
+add_env PATH "${HOME}/.anyenv/bin"
