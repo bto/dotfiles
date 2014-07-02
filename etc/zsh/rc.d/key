@@ -3,7 +3,7 @@ bindkey -e
 
 # backspace
 if [ $TERM = "screen" ]; then
-  stty erase "^?"
+    stty erase "^?"
 else
-  stty erase "^H"
+    stty erase "^H"
 fi

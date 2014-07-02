@@ -73,7 +73,7 @@ if [ x$TERM = xscreen ]; then
                     cmd=(builtin jobs -l $cmd[2])
                 fi
                 ;;
-            %*) 
+            %*)
                 cmd=(builtin jobs -l $cmd[1])
                 ;;
             cd)
@@ -97,17 +97,17 @@ fi
 
 symfony()
 {(
-  pwd=$PWD
-  while true; do
-    if [ -f symfony ]; then
-      ./symfony $*
-      return $?
-    elif [ $PWD = / ]; then
-      cd $pwd
-      command symfony $*
-      return $?
-    else
-      cd ..
-    fi
-  done
+    pwd=$PWD
+    while true; do
+        if [ -f symfony ]; then
+            ./symfony $*
+            return $?
+        elif [ $PWD = / ]; then
+            cd $pwd
+            command symfony $*
+            return $?
+        else
+            cd ..
+        fi
+    done
 )}
