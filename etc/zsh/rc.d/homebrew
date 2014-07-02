@@ -1,8 +1,4 @@
-# check homebrew installed
-type brew > /dev/null 2>&1
-if [ $? -ne 0 ]; then
-    return
-fi
+_command_exists brew || return
 
 # findutils
 if [ -d $(brew --prefix findutils) ]; then

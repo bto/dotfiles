@@ -95,7 +95,7 @@ export LANG
 VISUAL=vi
 EDITOR=vi
 PAGER=more
-type less > /dev/null 2>&1 && PAGER=less
+_command_exists less && PAGER=less
 export VISUAL EDITOR PAGER
 
 # ディレクトリスタックのサイズ
