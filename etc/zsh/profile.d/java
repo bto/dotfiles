@@ -3,7 +3,7 @@
 #
 
 # PATH の設定
-add_env PATH "/usr/local/java/*/bin" "/usr/java/*/bin"
+_glob_add_path_env PATH "/usr/local/java/*/bin" "/usr/java/*/bin"
 
 # JAVA_HOME の設定
 for x in {/usr/local,/usr}/java/jdk /opt/jdk*; do

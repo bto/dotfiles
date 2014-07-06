@@ -3,88 +3,82 @@
 #
 
 # PATH の設定
-PATH=
-add_env PATH "/bin" "/sbin"
-add_env PATH "/usr/bin" "/usr/sbin"
-add_env PATH "/usr/ucb"
-add_env PATH "/usr/*/bin" "/usr/*/sbin"
-add_env PATH "/usr/local/*/bin" "/usr/local/*/sbin"
-add_env PATH "/opt/bin" "/opt/sbin"
-add_env PATH "/opt/*/bin" "/opt/*/sbin"
-add_env PATH "/opt/local/*/bin" "/opt/local/*/sbin"
-clean_env PATH
-export PATH
+PATH_TMP=
+_glob_add_path_env PATH_TMP "/bin" "/sbin"
+_glob_add_path_env PATH_TMP "/usr/bin" "/usr/sbin"
+_glob_add_path_env PATH_TMP "/usr/ucb"
+_glob_add_path_env PATH_TMP "/usr/*/bin" "/usr/*/sbin"
+_glob_add_path_env PATH_TMP "/usr/local/*/bin" "/usr/local/*/sbin"
+_glob_add_path_env PATH_TMP "/opt/bin" "/opt/sbin"
+_glob_add_path_env PATH_TMP "/opt/*/bin" "/opt/*/sbin"
+_glob_add_path_env PATH_TMP "/opt/local/*/bin" "/opt/local/*/sbin"
+PATH=$PATH_TMP
+export PATH_TMP
 
 # MANPATH の設定
 MANPATH=
-add_env MANPATH "/man" "/man/ja"
-add_env MANPATH "/share/man" "/share/man/ja"
-add_env MANPATH "/usr/man" "/usr/man/ja"
-add_env MANPATH "/usr/share/man" "/usr/share/man/ja"
-add_env MANPATH "/usr/*/man" "/usr/*/man/ja"
-add_env MANPATH "/usr/*/share/man" "/usr/*/share/man/ja"
-add_env MANPATH "/usr/local/*/man" "/usr/local/*/man/ja"
-add_env MANPATH "/usr/local/*/share/man" "/usr/local/*/share/man/ja"
-add_env MANPATH "/opt/*/man" "/opt/*/man/ja"
-add_env MANPATH "/opt/*/share/man" "/opt/*/share/man/ja"
-add_env MANPATH "/opt/local/*/man" "/opt/local/*/man/ja"
-add_env MANPATH "/opt/local/*/share/man" "/opt/local/*/share/man/ja"
-clean_env MANPATH
+_glob_add_path_env MANPATH "/man" "/man/ja"
+_glob_add_path_env MANPATH "/share/man" "/share/man/ja"
+_glob_add_path_env MANPATH "/usr/man" "/usr/man/ja"
+_glob_add_path_env MANPATH "/usr/share/man" "/usr/share/man/ja"
+_glob_add_path_env MANPATH "/usr/*/man" "/usr/*/man/ja"
+_glob_add_path_env MANPATH "/usr/*/share/man" "/usr/*/share/man/ja"
+_glob_add_path_env MANPATH "/usr/local/*/man" "/usr/local/*/man/ja"
+_glob_add_path_env MANPATH "/usr/local/*/share/man" "/usr/local/*/share/man/ja"
+_glob_add_path_env MANPATH "/opt/*/man" "/opt/*/man/ja"
+_glob_add_path_env MANPATH "/opt/*/share/man" "/opt/*/share/man/ja"
+_glob_add_path_env MANPATH "/opt/local/*/man" "/opt/local/*/man/ja"
+_glob_add_path_env MANPATH "/opt/local/*/share/man" "/opt/local/*/share/man/ja"
 export MANPATH
 
 # LD_LIBRARY_PATH の設定
 LD_LIBRARY_PATH=
-add_env LD_LIBRARY_PATH "/lib"
-add_env LD_LIBRARY_PATH "/usr/lib"
-add_env LD_LIBRARY_PATH "/usr/*/lib"
-add_env LD_LIBRARY_PATH "/usr/local/*/lib"
-add_env LD_LIBRARY_PATH "/opt/*/lib"
-add_env LD_LIBRARY_PATH "/opt/local/*/lib"
-clean_env LD_LIBRARY_PATH
+_glob_add_path_env LD_LIBRARY_PATH "/lib"
+_glob_add_path_env LD_LIBRARY_PATH "/usr/lib"
+_glob_add_path_env LD_LIBRARY_PATH "/usr/*/lib"
+_glob_add_path_env LD_LIBRARY_PATH "/usr/local/*/lib"
+_glob_add_path_env LD_LIBRARY_PATH "/opt/*/lib"
+_glob_add_path_env LD_LIBRARY_PATH "/opt/local/*/lib"
 export LD_LIBRARY_PATH
 
 # LIBRARY_PATH の設定
 LIBRARY_PATH=
-add_env LIBRARY_PATH "/lib"
-add_env LIBRARY_PATH "/usr/lib"
-add_env LIBRARY_PATH "/usr/*/lib"
-add_env LIBRARY_PATH "/usr/local/*/lib"
-add_env LIBRARY_PATH "/opt/*/lib"
-add_env LIBRARY_PATH "/opt/local/*/lib"
-clean_env LIBRARY_PATH
+_glob_add_path_env LIBRARY_PATH "/lib"
+_glob_add_path_env LIBRARY_PATH "/usr/lib"
+_glob_add_path_env LIBRARY_PATH "/usr/*/lib"
+_glob_add_path_env LIBRARY_PATH "/usr/local/*/lib"
+_glob_add_path_env LIBRARY_PATH "/opt/*/lib"
+_glob_add_path_env LIBRARY_PATH "/opt/local/*/lib"
 export LIBRARY_PATH
 
 # C_INCLUDE_PATH の設定
 C_INCLUDE_PATH=
-add_env C_INCLUDE_PATH "/include"
-add_env C_INCLUDE_PATH "/usr/include"
-add_env C_INCLUDE_PATH "/usr/*/include"
-add_env C_INCLUDE_PATH "/usr/local/*/include"
-add_env C_INCLUDE_PATH "/opt/*/include"
-add_env C_INCLUDE_PATH "/opt/local/*/include"
-clean_env C_INCLUDE_PATH
+_glob_add_path_env C_INCLUDE_PATH "/include"
+_glob_add_path_env C_INCLUDE_PATH "/usr/include"
+_glob_add_path_env C_INCLUDE_PATH "/usr/*/include"
+_glob_add_path_env C_INCLUDE_PATH "/usr/local/*/include"
+_glob_add_path_env C_INCLUDE_PATH "/opt/*/include"
+_glob_add_path_env C_INCLUDE_PATH "/opt/local/*/include"
 export C_INCLUDE_PATH
 
 # CPLUS_INCLUDE_PATH の設定
 CPLUS_INCLUDE_PATH=
-add_env CPLUS_INCLUDE_PATH "/include"
-add_env CPLUS_INCLUDE_PATH "/usr/include"
-add_env CPLUS_INCLUDE_PATH "/usr/*/include"
-add_env CPLUS_INCLUDE_PATH "/usr/local/*/include"
-add_env CPLUS_INCLUDE_PATH "/opt/*/include"
-add_env CPLUS_INCLUDE_PATH "/opt/local/*/include"
-clean_env CPLUS_INCLUDE_PATH
+_glob_add_path_env CPLUS_INCLUDE_PATH "/include"
+_glob_add_path_env CPLUS_INCLUDE_PATH "/usr/include"
+_glob_add_path_env CPLUS_INCLUDE_PATH "/usr/*/include"
+_glob_add_path_env CPLUS_INCLUDE_PATH "/usr/local/*/include"
+_glob_add_path_env CPLUS_INCLUDE_PATH "/opt/*/include"
+_glob_add_path_env CPLUS_INCLUDE_PATH "/opt/local/*/include"
 export CPLUS_INCLUDE_PATH
 
 # PKG_CONFIG_PATH の設定
 PKG_CONFIG_PATH=
-add_env PKG_CONFIG_PATH "/lib/pkgconfig"
-add_env PKG_CONFIG_PATH "/usr/lib/pkgconfig"
-add_env PKG_CONFIG_PATH "/usr/*/lib/pkgconfig"
-add_env PKG_CONFIG_PATH "/usr/local/*/lib/pkgconfig"
-add_env PKG_CONFIG_PATH "/opt/*/lib/pkgconfig"
-add_env PKG_CONFIG_PATH "/opt/local/*/lib/pkgconfig"
-clean_env PKG_CONFIG_PATH
+_glob_add_path_env PKG_CONFIG_PATH "/lib/pkgconfig"
+_glob_add_path_env PKG_CONFIG_PATH "/usr/lib/pkgconfig"
+_glob_add_path_env PKG_CONFIG_PATH "/usr/*/lib/pkgconfig"
+_glob_add_path_env PKG_CONFIG_PATH "/usr/local/*/lib/pkgconfig"
+_glob_add_path_env PKG_CONFIG_PATH "/opt/*/lib/pkgconfig"
+_glob_add_path_env PKG_CONFIG_PATH "/opt/local/*/lib/pkgconfig"
 export PKG_CONFIG_PATH
 
 # ロケールの設定

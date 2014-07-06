@@ -1,14 +1,17 @@
 function _glob_args()
 {
-    eval ls $2 2>&- | while read file; do
-        $1 $file
+    pattern=$1
+    shift
+
+    eval echo $pattern 2>&- | tr ' ' '\n' | while read file; do
+        $@ $file
     done
 }
 
 function _glob_source()
 {
     while [ -n "$1" ]; do
-        _glob_args _source_if_exists $1
+        _glob_args $1 _source_if_exists
         shift
     done
 }

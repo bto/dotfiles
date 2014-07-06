@@ -1,9 +1,9 @@
 _command_exists brew || return
 
 # coreutils
-add_env PATH $(brew --prefix coreutils)/libexec/gnubin
-add_env MANPATH $(brew --prefix coreutils)/libexec/gnuman
+_glob_add_path_env PATH $(brew --prefix coreutils)/libexec/gnubin
+_glob_add_path_env MANPATH $(brew --prefix coreutils)/libexec/gnuman
 
 # gnu-sed
-add_env PATH $(brew --prefix gnu-sed)/libexec/gnubin
-add_env MANPATH $(brew --prefix gnu-sed)/libexec/gnuman
+_glob_add_path_env PATH $(brew --prefix gnu-sed)/libexec/gnubin
+_glob_add_path_env MANPATH $(brew --prefix gnu-sed)/libexec/gnuman

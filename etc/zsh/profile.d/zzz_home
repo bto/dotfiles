@@ -1,36 +1,29 @@
 # PATH
-add_env PATH "${HOME}/opt/*/bin" "${HOME}/opt/*/sbin"
-add_env PATH "${HOME}/bin" "${HOME}/sbin"
-clean_env PATH
+_glob_add_path_env PATH "${HOME}/opt/*/bin" "${HOME}/opt/*/sbin"
+_glob_add_path_env PATH "${HOME}/bin" "${HOME}/sbin"
 
 # MANPATH
-add_env MANPATH "${HOME}/opt/*/man" "${HOME}/opt/*/share/man"
-add_env MANPATH "${HOME}/opt/*/man/ja" "${HOME}/opt/*/share/man/ja"
-add_env MANPATH "${HOME}/share/man" "${HOME}/man"
-add_env MANPATH "${HOME}/share/man/ja" "${HOME}/man/ja"
-clean_env MANPATH
+_glob_add_path_env MANPATH "${HOME}/opt/*/man" "${HOME}/opt/*/share/man"
+_glob_add_path_env MANPATH "${HOME}/opt/*/man/ja" "${HOME}/opt/*/share/man/ja"
+_glob_add_path_env MANPATH "${HOME}/share/man" "${HOME}/man"
+_glob_add_path_env MANPATH "${HOME}/share/man/ja" "${HOME}/man/ja"
 
 # LD_LIBRARY_PATH
-add_env LD_LIBRARY_PATH "${HOME}/opt/*/lib"
-add_env LD_LIBRARY_PATH "${HOME}/lib"
-clean_env LD_LIBRARY_PATH
+_glob_add_path_env LD_LIBRARY_PATH "${HOME}/opt/*/lib"
+_glob_add_path_env LD_LIBRARY_PATH "${HOME}/lib"
 
 # LIBRARY_PATH
-add_env LIBRARY_PATH "${HOME}/opt/*/lib"
-add_env LIBRARY_PATH "${HOME}/lib"
-clean_env LIBRARY_PATH
+_glob_add_path_env LIBRARY_PATH "${HOME}/opt/*/lib"
+_glob_add_path_env LIBRARY_PATH "${HOME}/lib"
 
 # C_INCLUDE_PATH
-add_env C_INCLUDE_PATH "${HOME}/opt/*/include"
-add_env C_INCLUDE_PATH "${HOME}/include"
-clean_env C_INCLUDE_PATH
+_glob_add_path_env C_INCLUDE_PATH "${HOME}/opt/*/include"
+_glob_add_path_env C_INCLUDE_PATH "${HOME}/include"
 
 # CPLUS_INCLUDE_PATH
-add_env CPLUS_INCLUDE_PATH "${HOME}/opt/*/include"
-add_env CPLUS_INCLUDE_PATH "${HOME}/include"
-clean_env CPLUS_INCLUDE_PATH
+_glob_add_path_env CPLUS_INCLUDE_PATH "${HOME}/opt/*/include"
+_glob_add_path_env CPLUS_INCLUDE_PATH "${HOME}/include"
 
 # PKG_CONFIG_PATH
-add_env PKG_CONFIG_PATH "${HOME}/opt/*/lib/pkgconfig"
-add_env PKG_CONFIG_PATH "${HOME}/lib/pkgconfig"
-clean_env PKG_CONFIG_PATH
+_glob_add_path_env PKG_CONFIG_PATH "${HOME}/opt/*/lib/pkgconfig"
+_glob_add_path_env PKG_CONFIG_PATH "${HOME}/lib/pkgconfig"
