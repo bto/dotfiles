@@ -1,9 +1,0 @@
-fpath=($ZDOTDIR/functions $fpath)
-autoload -U compinit
-compinit
-
-# jman
-compctl -c jman
-
-# latex
-compctl -g '*.tex' platex
