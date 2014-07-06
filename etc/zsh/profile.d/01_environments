@@ -1,8 +1,4 @@
-#
-# いろいろな環境変数の設定
-#
-
-# PATH の設定
+# PATH
 PATH_TMP=
 _glob_add_path_env PATH_TMP "/bin" "/sbin"
 _glob_add_path_env PATH_TMP "/usr/bin" "/usr/sbin"
@@ -15,7 +11,7 @@ _glob_add_path_env PATH_TMP "/opt/local/*/bin" "/opt/local/*/sbin"
 PATH=$PATH_TMP
 export PATH_TMP
 
-# MANPATH の設定
+# MANPATH
 MANPATH=
 _glob_add_path_env MANPATH "/man" "/man/ja"
 _glob_add_path_env MANPATH "/share/man" "/share/man/ja"
@@ -31,7 +27,7 @@ _glob_add_path_env MANPATH "/opt/local/*/man" "/opt/local/*/man/ja"
 _glob_add_path_env MANPATH "/opt/local/*/share/man" "/opt/local/*/share/man/ja"
 export MANPATH
 
-# LD_LIBRARY_PATH の設定
+# LD_LIBRARY_PATH
 LD_LIBRARY_PATH=
 _glob_add_path_env LD_LIBRARY_PATH "/lib"
 _glob_add_path_env LD_LIBRARY_PATH "/usr/lib"
@@ -41,7 +37,7 @@ _glob_add_path_env LD_LIBRARY_PATH "/opt/*/lib"
 _glob_add_path_env LD_LIBRARY_PATH "/opt/local/*/lib"
 export LD_LIBRARY_PATH
 
-# LIBRARY_PATH の設定
+# LIBRARY_PATH
 LIBRARY_PATH=
 _glob_add_path_env LIBRARY_PATH "/lib"
 _glob_add_path_env LIBRARY_PATH "/usr/lib"
@@ -51,7 +47,7 @@ _glob_add_path_env LIBRARY_PATH "/opt/*/lib"
 _glob_add_path_env LIBRARY_PATH "/opt/local/*/lib"
 export LIBRARY_PATH
 
-# C_INCLUDE_PATH の設定
+# C_INCLUDE_PATH
 C_INCLUDE_PATH=
 _glob_add_path_env C_INCLUDE_PATH "/include"
 _glob_add_path_env C_INCLUDE_PATH "/usr/include"
@@ -61,7 +57,7 @@ _glob_add_path_env C_INCLUDE_PATH "/opt/*/include"
 _glob_add_path_env C_INCLUDE_PATH "/opt/local/*/include"
 export C_INCLUDE_PATH
 
-# CPLUS_INCLUDE_PATH の設定
+# CPLUS_INCLUDE_PATH
 CPLUS_INCLUDE_PATH=
 _glob_add_path_env CPLUS_INCLUDE_PATH "/include"
 _glob_add_path_env CPLUS_INCLUDE_PATH "/usr/include"
@@ -71,7 +67,7 @@ _glob_add_path_env CPLUS_INCLUDE_PATH "/opt/*/include"
 _glob_add_path_env CPLUS_INCLUDE_PATH "/opt/local/*/include"
 export CPLUS_INCLUDE_PATH
 
-# PKG_CONFIG_PATH の設定
+# PKG_CONFIG_PATH
 PKG_CONFIG_PATH=
 _glob_add_path_env PKG_CONFIG_PATH "/lib/pkgconfig"
 _glob_add_path_env PKG_CONFIG_PATH "/usr/lib/pkgconfig"
@@ -80,41 +76,3 @@ _glob_add_path_env PKG_CONFIG_PATH "/usr/local/*/lib/pkgconfig"
 _glob_add_path_env PKG_CONFIG_PATH "/opt/*/lib/pkgconfig"
 _glob_add_path_env PKG_CONFIG_PATH "/opt/local/*/lib/pkgconfig"
 export PKG_CONFIG_PATH
-
-# ロケールの設定
-LANG=ja_JP.UTF-8
-export LANG
-
-# ページャとエディタの設定
-VISUAL=vi
-EDITOR=vi
-PAGER=more
-_command_exists less && PAGER=less
-export VISUAL EDITOR PAGER
-
-# ディレクトリスタックのサイズ
-DIRSTACKSIZE=20
-export DIRSTACKSIZE
-
-# ヒストリ
-HISTFILE="$HOME/.history"
-HISTIGNORE='\&:fg:bg:ls:pwd:cd ..:cd ~-:cd -:cd:jobs:set -x:ls -l:ls -l'
-HISTSIZE=1048576
-HISTFILESIZE=${HISTSIZE}
-SAVEHIST=${HISTSIZE}
-HISTCONTROL=ignoredups
-export HISTFILE HISTIGNORE HISTSIZE HISTFILESIZE SAVEHIST HISTCONTROL
-
-# デフォルトでは単語の区切りがかなり腐ってる
-# see. http://www.zsh.org/mla/users/2000/msg00539.html
-WORDCHARS=""
-export WORDCHARS
-
-# REALNAME の設定
-# Mutt とか Pine で有効らしい
-#REALNAME=`grep $USER /etc/passwd | awk -F: '{ print $5 }' 2>/dev/null`
-#export REALNAME
-
-# その他
-export HOST
-limit coredumpsize 0

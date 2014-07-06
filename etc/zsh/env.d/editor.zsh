@@ -1,0 +1,3 @@
+EDITOR=vi
+VISUAL=vi
+export EDITOR VISUAL

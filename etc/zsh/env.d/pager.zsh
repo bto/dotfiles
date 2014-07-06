@@ -1,0 +1,2 @@
+PAGER=less
+export PAGER
