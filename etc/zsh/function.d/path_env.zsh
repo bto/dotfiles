@@ -7,7 +7,7 @@ function _add_path_env_if_dir()
 
 function _glob_add_path_env()
 {
-    env_name=$1
+    local env_name=$1
     shift
 
     while [ -n "$1" ]; do

@@ -1,6 +1,6 @@
 function _glob_args()
 {
-    pattern=$1
+    local pattern=$1
     shift
 
     eval echo $pattern 2>&- | tr ' ' '\n' | while read file; do
