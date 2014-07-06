@@ -1,9 +1,0 @@
-# emacs like key bind
-bindkey -e
-
-# backspace
-if [ $TERM = "screen" ]; then
-    stty erase "^?"
-else
-    stty erase "^H"
-fi
