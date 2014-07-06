@@ -1,3 +1,4 @@
+_command_exists peco && return
 _command_exists percol || return
 
 function percol_select_history()
