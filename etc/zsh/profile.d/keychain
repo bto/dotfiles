@@ -1,9 +1,7 @@
-if ! which keychain > /dev/null 2>&1; then
-  return
-fi
+_command_exists keychain || return
 
 keychain id_rsa id_dsa
 
 if [ -f $HOME/.keychain/$HOST-sh ]; then
-  source $HOME/.keychain/$HOST-sh
+    source $HOME/.keychain/$HOST-sh
 fi
