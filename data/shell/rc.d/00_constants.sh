@@ -1,0 +1,4 @@
+BIN_DIR=$TOP_DIR/bin
+CONFIG_DIR=$TOP_DIR/config
+DATA_DIR=$TOP_DIR/data
+RC_DIR=$TOP_DIR/rc
