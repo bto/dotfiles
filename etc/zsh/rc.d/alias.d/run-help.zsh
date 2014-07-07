@@ -1,0 +1,1 @@
+alias run-help='man'
