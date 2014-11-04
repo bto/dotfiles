@@ -1,4 +1,4 @@
-TOP_DIR := $(realpath $(lastword $(MAKEFILE_LIST))/../../../..)
+TOP_DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST)))/../../..)
 BIN_DIR = $(TOP_DIR)/bin
 CONFIG_DIR = $(TOP_DIR)/config
 DATA_DIR = $(TOP_DIR)/data
