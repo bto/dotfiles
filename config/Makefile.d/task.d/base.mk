@@ -18,3 +18,6 @@ install: $(INSTALL_TARGETS)
 
 .PHONY: test
 test: $(TEST_TARGETS)
+
+.PHONY: update
+update: $(UPDATE_TARGETS)
