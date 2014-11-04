@@ -1,9 +1,10 @@
-BIN_DIR = bin
-CONFIG_DIR = config
-DATA_DIR = data
-RC_DIR = rc
-TEST_DIR = test
-VAR_DIR = var
+TOP_DIR := $(realpath $(lastword $(MAKEFILE_LIST))/../../../..)
+BIN_DIR = $(TOP_DIR)/bin
+CONFIG_DIR = $(TOP_DIR)/config
+DATA_DIR = $(TOP_DIR)/data
+RC_DIR = $(TOP_DIR)/rc
+TEST_DIR = $(TOP_DIR)/test
+VAR_DIR = $(TOP_DIR)/var
 
 ALL_TARGETS += build
 BUILD_TARGETS += initialize
