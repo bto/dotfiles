@@ -1,0 +1,15 @@
+BIN_DIR = bin
+CONFIG_DIR = config
+DATA_DIR = data
+RC_DIR = rc
+TEST_DIR = test
+VAR_DIR = var
+
+ALL_TARGETS += build
+BUILD_TARGETS += initialize
+CHECK_TARGETS +=
+CLEAN_TARGETS +=
+DISTCLEAN_TARGETS += clean
+INITIALIZE_TARGETS += install
+INSTALL_TARGETS +=
+TEST_TARGETS +=

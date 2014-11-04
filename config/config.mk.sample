@@ -1,0 +1,2 @@
+CONFIG_DIR = config
+MAKE_DIR = $(CONFIG_DIR)/Makefile.d
