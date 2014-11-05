@@ -1,5 +1,4 @@
+RBENV = $(RBENV_DIR)/bin/rbenv
 RBENV_DIR = ~/.rbenv
-RBENV_REPO = git@github.com:sstephenson/rbenv.git
-
-RUBY_BUILD_DIR = $(RBENV_DIR)/plugins/ruby-build
-RUBY_BUILD_REPO = git@github.com:sstephenson/ruby-build.git
+RBENV_PLUGIN_DIR = $(RBENV_DIR)/plugins
+RBENV_INSTALLER = https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer
