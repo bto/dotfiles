@@ -8,5 +8,5 @@ phpenv-update: $(PHP_BUILD_DIR)
 $(PHPENV_DIR):
 	$(HTTP_CLIENT) https://raw.githubusercontent.com/CHH/phpenv/master/bin/phpenv-install.sh | bash
 
-$(PHP_BUILD_DIR): $(PHPENV_DIR)
+$(PHP_BUILD_DIR):
 	git clone $(PHP_BUILD_REPO) $@
