@@ -1,1 +1,1 @@
-HTTP_CLIENT = curl -sS
+HTTP_CLIENT = curl -sSL
