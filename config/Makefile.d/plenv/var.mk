@@ -6,3 +6,6 @@ PLENV_REPO = git@github.com:tokuhirom/plenv.git
 
 PERL_BUILD_DIR = $(PLENV_PLUGIN_DIR)/perl-build
 PERL_BUILD_REPO = git@github.com:tokuhirom/Perl-Build.git
+
+INSTALL_TARGETS += plenv-install
+UPDATE_TARGETS += plenv-update

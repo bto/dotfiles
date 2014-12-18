@@ -6,3 +6,6 @@ NDENV_REPO = git@github.com:riywo/ndenv.git
 
 NODE_BUILD_DIR = $(NDENV_PLUGIN_DIR)/node-build
 NODE_BUILD_REPO = git@github.com:riywo/node-build.git
+
+INSTALL_TARGETS += ndenv-install
+UPDATE_TARGETS += ndenv-update
