@@ -6,4 +6,4 @@ oh-my-zsh-update: $(OH_MY_ZSH_DIR)
 	cd $< && git fetch -p && git pull
 
 $(OH_MY_ZSH_DIR):
-	git clone git://github.com/robbyrussell/oh-my-zsh.git $@
+	git clone $(OH_MY_ZSH_REPO) $@
