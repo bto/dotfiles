@@ -25,4 +25,5 @@ function _source_if_exists()
 
 unsetopt nomatch
 
+_glob_source "$ZDOTDIR/function.d/*.zsh"
 _glob_source '~/.zsh?*/.zshenv'
