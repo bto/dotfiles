@@ -9,7 +9,7 @@ _glob_add_path_env PATH_TMP "/opt/bin" "/opt/sbin"
 _glob_add_path_env PATH_TMP "/opt/*/bin" "/opt/*/sbin"
 _glob_add_path_env PATH_TMP "/opt/local/*/bin" "/opt/local/*/sbin"
 PATH=$PATH_TMP
-export PATH_TMP
+export PATH
 
 # MANPATH
 MANPATH=
