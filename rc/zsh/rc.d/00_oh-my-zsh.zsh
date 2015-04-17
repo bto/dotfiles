@@ -7,3 +7,5 @@ ZSH_THEME="robbyrussell"
 plugins=(git themes)
 
 source $ZSH/oh-my-zsh.sh
+
+unset LC_CTYPE
