@@ -2,7 +2,9 @@
 vim-install: $(VIM_EDITORCONFIG)
 
 $(VIM_EDITORCONFIG): $(VIM_EDITORCONFIG_PKG)
-	unzip -d $(VIM_DIR) -u $<
+	tar xvf $< -C $(VIM_DIR)
+	cp -r $(VIM_EDITORCONFIG_DIR)/autoload $(VIM_DIR)
+	cp -r $(VIM_EDITORCONFIG_DIR)/plugin   $(VIM_DIR)
 	touch $@
 
 $(VIM_EDITORCONFIG_PKG):
