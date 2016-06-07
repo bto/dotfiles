@@ -4,6 +4,7 @@ coreutils
 direnv
 findutils
 gnu-sed
+grsync
 heroku
 mcrypt
 memcached
