@@ -1,0 +1,6 @@
+configure_option -D "--without-pear"
+configure_option "--with-pear"
+configure_option "--enable-maintainer-zts"
+install_package "https://secure.php.net/distributions/php-7.0.7.tar.bz2"
+install_xdebug "2.4.0"
+enable_builtin_opcache
