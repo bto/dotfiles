@@ -1,5 +1,5 @@
 .PHONY: phpenv-install
-phpenv-install: $(PHPENV_DIR) $(PHP_BUILD_DIR)
+phpenv-install: $(PHPENV_DIR) $(PHP_BUILD_DIR) $(PECL_BUILD_DIR)
 
 .PHONY: phpenv-update
 phpenv-update:
@@ -10,3 +10,6 @@ $(PHPENV_DIR):
 
 $(PHP_BUILD_DIR):
 	git clone $(PHP_BUILD_REPO) $@
+
+$(PECL_BUILD_DIR):
+	git clone $(PECL_BUILD_REPO) $@
