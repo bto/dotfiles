@@ -6,6 +6,7 @@ findutils
 gnu-sed
 grsync
 heroku
+libyaml
 mcrypt
 memcached
 mobile-shell
