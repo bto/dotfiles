@@ -16,6 +16,7 @@ openssl
 peco
 pwgen
 ricty
+source-highlight
 the_silver_searcher
 tmux
 unar
