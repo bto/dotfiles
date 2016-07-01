@@ -12,6 +12,7 @@ memcached
 mobile-shell
 mysql
 nginx
+nkf
 openssl
 peco
 pwgen
