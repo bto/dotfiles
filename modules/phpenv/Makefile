@@ -34,8 +34,8 @@ $(PHPENV_DIR):
 $(PHP_BUILD_DIR): $(PHPENV_DIR)
 	git clone $(PHP_BUILD_REPO) $@
 
-$(PHP_BUILD_DIR)/share/php-build/definitions/%: $(PHPENV_MODULE_DIR)/php-build/definitions/%
-	ln -sf $< $@
+$(PHP_BUILD_DIR)/share/php-build/definitions/%: $(PHPENV_MODULE_DIR)/php-build/definitions/% $(PHP_BUILD_DIR)
+	cp $< $@
 
 $(PECL_BUILD_DIR): $(PHPENV_DIR)
 	git clone $(PECL_BUILD_REPO) $@
