@@ -18,6 +18,5 @@ $(foreach source, $(DOTFILES_SOURCES), \
 
 
 INSTALL_TARGETS += dotfiles-install
-
 .PHONY: dotfiles-install
 dotfiles-install: $(DOTFILES_TARGETS)
