@@ -1,5 +1,7 @@
 DOTFILES_SOURCES = $(wildcard $(MODULE_DIR)/*/dotfiles/*)
 
+INSTALL_TARGETS += dotfiles-install
+
 define dotfiles-rule
 DOTFILES_TARGETS += $1
 $1: $2
@@ -16,7 +18,5 @@ $(foreach source, $(DOTFILES_SOURCES), \
   ) \
 )
 
-
-INSTALL_TARGETS += dotfiles-install
 .PHONY: dotfiles-install
 dotfiles-install: $(DOTFILES_TARGETS)
