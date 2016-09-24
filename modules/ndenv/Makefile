@@ -7,8 +7,13 @@ NDENV_REPO = git://github.com/riywo/ndenv.git
 NODE_BUILD_DIR = $(NDENV_PLUGIN_DIR)/node-build
 NODE_BUILD_REPO = git://github.com/riywo/node-build.git
 
+DISTCLEAN_TARGETS += ndenv-distclean
 INSTALL_TARGETS += ndenv-install
 UPDATE_TARGETS += ndenv-update
+
+.PHONY: ndenv-distclean
+ndenv-distclean:
+	rm -rf $(NDENV_DIR)
 
 .PHONY: ndenv-install
 ndenv-install: $(NDENV_DIR) $(NODE_BUILD_DIR)

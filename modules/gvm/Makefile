@@ -1,7 +1,12 @@
 GVM_DIR = ~/.gvm
 GVM_INSTALLER = https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer
 
+DISTCLEAN_TARGETS += gvm-distclean
 INSTALL_TARGETS += gvm-install
+
+.PHONY: gvm-distclean
+gvm-distclean:
+	rm -rf $(GVM_DIR)
 
 .PHONY: gvm-install
 gvm-install: $(GVM_DIR)

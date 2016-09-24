@@ -13,8 +13,13 @@ PHP_BUILD_DEFINITIONS_FILES = \
     $(notdir $(wildcard $(PHPENV_MODULE_DIR)/php-build/definitions/*)) \
   )
 
+DISTCLEAN_TARGETS += phpenv-distclean
 INSTALL_TARGETS += phpenv-install
 UPDATE_TARGETS += phpenv-update
+
+.PHONY: phpenv-distclean
+phpenv-distclean:
+	rm -rf $(PHPENV_DIR)
 
 .PHONY: phpenv-install
 phpenv-install: $(PHPENV_DIR) $(PHP_BUILD_DIR) $(PHP_BUILD_DEFINITIONS_FILES) $(PECL_BUILD_DIR)
