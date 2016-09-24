@@ -1,9 +1,17 @@
+OH_MY_ZSH_DIR = ~/.oh-my-zsh
+OH_MY_ZSH_REPO = git://github.com/robbyrussell/oh-my-zsh.git
+
+
+INSTALL_TARGETS += oh-my-zsh-install
 .PHONY: oh-my-zsh-install
 oh-my-zsh-install: $(OH_MY_ZSH_DIR)
 
+
+UPDATE_TARGETS += oh-my-zsh-update
 .PHONY: oh-my-zsh-update
 oh-my-zsh-update: $(OH_MY_ZSH_DIR)
 	cd $< && git fetch -p && git pull
+
 
 $(OH_MY_ZSH_DIR):
 	git clone $(OH_MY_ZSH_REPO) $@
