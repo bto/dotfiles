@@ -20,8 +20,8 @@ $(foreach source, $(DOTFILES_SOURCES), \
 )
 
 .PHONY: dotfiles-clean
-dotfiles-clean: $(DOTFILES_TARGETS)
-	rm $^
+dotfiles-clean:
+	rm -f $(DOTFILES_TARGETS)
 
 .PHONY: dotfiles-install
 dotfiles-install: $(DOTFILES_TARGETS)
