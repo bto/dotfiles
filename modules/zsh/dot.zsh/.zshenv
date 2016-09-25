@@ -1,3 +1,5 @@
+source $ZDOTDIR/var/init.zsh
+
 function _glob_args()
 {
     local pattern=$1
