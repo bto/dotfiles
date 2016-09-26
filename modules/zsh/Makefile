@@ -11,4 +11,5 @@ zsh-clean:
 zsh-initialize: $(ZSH_INIT_SCRIPT)
 
 $(ZSH_INIT_SCRIPT):
+	mkdir -p $(@D)
 	echo export DOTFILES_DIR=$(TOP_DIR) > $@
