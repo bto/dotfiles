@@ -1,3 +1,8 @@
 bind -e
+
+bind -k down ed-search-next-history
+bind -k up   ed-search-prev-history
+
 bind "^R" em-inc-search-prev
 bind "^S" em-inc-search-next
+bind '^W' ed-delete-prev-word
