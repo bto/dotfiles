@@ -1,0 +1,3 @@
+bind -e
+bind "^R" em-inc-search-prev
+bind "^S" em-inc-search-next
