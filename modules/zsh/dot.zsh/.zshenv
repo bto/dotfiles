@@ -1,31 +1,13 @@
-source $ZDOTDIR/var/init.zsh
+__dir__=$(dirname ${(%):-%N})
 
-function _glob_args()
-{
-    local pattern=$1
-    shift
+source $__dir__/var/init.zsh
 
-    eval echo $pattern 2>&- | tr ' ' '\n' | while read file; do
-        $@ $file
-    done
-}
+functions_dir=$__dir__/functions
+fpath=($fpath $functions_dir(N-/))
+for f in $functions_dir/*; do
+    autoload -U $(basename $f)
+done
 
-function _glob_source()
-{
-    while [ -n "$1" ]; do
-        _glob_args $1 _source_if_exists
-        shift
-    done
-}
-
-function _source_if_exists()
-{
-    if [ -f "$1" ]; then
-        source "$1"
-    fi
-}
-
-unsetopt nomatch
-
-_glob_source "$ZDOTDIR/function.d/*.zsh"
-_glob_source '~/.zsh?*/.zshenv'
+for f in ~/.zsh?*/.zshenv(N-.); do
+    source $f
+done

@@ -1,3 +1,5 @@
+unsetopt nomatch
+
 function _add_path_env_if_dir()
 {
     if [ -d $2 ]; then
