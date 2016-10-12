@@ -1,16 +1,3 @@
-# PATH
-PATH_TMP=
-_glob_add_path_env PATH_TMP "/bin" "/sbin"
-_glob_add_path_env PATH_TMP "/usr/bin" "/usr/sbin"
-_glob_add_path_env PATH_TMP "/usr/ucb"
-_glob_add_path_env PATH_TMP "/usr/*/bin" "/usr/*/sbin"
-_glob_add_path_env PATH_TMP "/usr/local/*/bin" "/usr/local/*/sbin"
-_glob_add_path_env PATH_TMP "/opt/bin" "/opt/sbin"
-_glob_add_path_env PATH_TMP "/opt/*/bin" "/opt/*/sbin"
-_glob_add_path_env PATH_TMP "/opt/local/*/bin" "/opt/local/*/sbin"
-PATH=$PATH_TMP
-export PATH
-
 # MANPATH
 MANPATH=
 _glob_add_path_env MANPATH "/man" "/man/ja"
