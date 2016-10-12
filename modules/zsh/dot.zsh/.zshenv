@@ -8,6 +8,4 @@ for f in $functions_dir/*; do
     autoload -U $(basename $f)
 done
 
-for f in ~/.zsh?*/.zshenv(N-.); do
-    source $f
-done
+_sources ~/.zsh?*/.zshenv(N-.)

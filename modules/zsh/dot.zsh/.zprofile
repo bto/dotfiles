@@ -1,4 +1,6 @@
-_glob_source "$ZDOTDIR/profile.d/*.zsh"
-_glob_source "$DOTFILES_DIR/modules/*/zsh.profile"
-_glob_source '~/.zsh?*/.zprofile'
-_glob_source "~/.zsh?*/profile.d/*.zsh"
+__dir__=$(dirname ${(%):-%N})
+
+_sources $__dir__/profile.d/*.zsh(N-.)
+_sources $DOTFILES_DIR/modules/*/zsh.profile(N-.)
+_sources ~/.zsh?*/.zprofile(N-.)
+_sources ~/.zsh?*/profile.d/*.zsh(N-.)

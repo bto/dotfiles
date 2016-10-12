@@ -1,1 +1,1 @@
-_glob_source '~/.zsh?*/.zlogin'
+_sources ~/.zsh?*/.zlogin(N-.)

@@ -1,1 +1,1 @@
-_glob_source '~/.zsh?*/.zlogout'
+_sources ~/.zsh?*/.zlogout(N-.)
