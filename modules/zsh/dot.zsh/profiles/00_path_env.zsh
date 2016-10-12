@@ -1,19 +1,3 @@
-# MANPATH
-MANPATH=
-_glob_add_path_env MANPATH "/man" "/man/ja"
-_glob_add_path_env MANPATH "/share/man" "/share/man/ja"
-_glob_add_path_env MANPATH "/usr/man" "/usr/man/ja"
-_glob_add_path_env MANPATH "/usr/share/man" "/usr/share/man/ja"
-_glob_add_path_env MANPATH "/usr/*/man" "/usr/*/man/ja"
-_glob_add_path_env MANPATH "/usr/*/share/man" "/usr/*/share/man/ja"
-_glob_add_path_env MANPATH "/usr/local/*/man" "/usr/local/*/man/ja"
-_glob_add_path_env MANPATH "/usr/local/*/share/man" "/usr/local/*/share/man/ja"
-_glob_add_path_env MANPATH "/opt/*/man" "/opt/*/man/ja"
-_glob_add_path_env MANPATH "/opt/*/share/man" "/opt/*/share/man/ja"
-_glob_add_path_env MANPATH "/opt/local/*/man" "/opt/local/*/man/ja"
-_glob_add_path_env MANPATH "/opt/local/*/share/man" "/opt/local/*/share/man/ja"
-export MANPATH
-
 # LD_LIBRARY_PATH
 LD_LIBRARY_PATH=
 _glob_add_path_env LD_LIBRARY_PATH "/lib"
