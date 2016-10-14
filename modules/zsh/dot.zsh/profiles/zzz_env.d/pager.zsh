@@ -1,2 +1,0 @@
-PAGER=less
-export PAGER
