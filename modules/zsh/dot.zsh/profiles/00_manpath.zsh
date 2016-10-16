@@ -17,6 +17,8 @@ manpath=(
     /usr/*/share/man(N-/)
     /usr/*/man/ja(N-/)
     /usr/*/man(N-/)
+    /Library/Developer/CommandLineTools/usr/share/man/ja(N-/)
+    /Library/Developer/CommandLineTools/usr/share/man(N-/)
     /usr/share/man/ja(N-/)
     /usr/share/man(N-/)
     /usr/man/ja(N-/)
