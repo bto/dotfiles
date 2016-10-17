@@ -1,1 +1,2 @@
-_glob_source "$ZDOTDIR/rc.d/alias.d/*.zsh"
+__dir__=$(dirname ${(%):-%N})
+_sources $__dir__/aliases/*.zsh(N-.)
