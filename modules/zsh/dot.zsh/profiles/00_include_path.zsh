@@ -2,6 +2,7 @@ typeset -U tmp_path
 tmp_path=(
     /opt/local/*/include(N-/)
     /opt/*/include(N-/)
+    /usr/local/opt/*/include(N-/)
     /usr/local/*/include(N-/)
     /usr/*/include(N-/)
     /usr/include(N-/)
