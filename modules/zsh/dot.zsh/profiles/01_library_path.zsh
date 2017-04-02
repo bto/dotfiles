@@ -2,6 +2,7 @@ typeset -U tmp_path
 tmp_path=(
     /opt/local/*/lib(N-/)
     /opt/*/lib(N-/)
+    /usr/local/opt/*/lib(N-/)
     /usr/local/*/lib(N-/)
     /usr/*/lib(N-/)
     /usr/lib(N-/)
