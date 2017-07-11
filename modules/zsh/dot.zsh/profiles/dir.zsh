@@ -1,0 +1,1 @@
+export DIRSTACKSIZE=40

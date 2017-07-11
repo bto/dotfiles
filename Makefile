@@ -1,14 +1,14 @@
+.PHONY: all
+all: initialize
+
 TOP_DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 BIN_DIR = $(TOP_DIR)/bin
 CONFIG_DIR = $(TOP_DIR)/config
-DATA_DIR = $(TOP_DIR)/data
-RC_DIR = $(TOP_DIR)/rc
-TEST_DIR = $(TOP_DIR)/test
+MODULE_DIR = $(TOP_DIR)/modules
+SOURCE_DIR = $(TOP_DIR)/src
 VAR_DIR = $(TOP_DIR)/var
+VENDOR_DIR = $(VAR_DIR)/vendor
 
-ALL_TARGETS += build
-BUILD_TARGETS += initialize
-CHECK_TARGETS +=
 CLEAN_TARGETS +=
 DISTCLEAN_TARGETS += clean
 INITIALIZE_TARGETS += install
@@ -16,18 +16,9 @@ INSTALL_TARGETS +=
 TEST_TARGETS +=
 UPDATE_TARGETS +=
 
-include config/Makefile.d/*/var.mk
--include config/var.mk
-
-
-.PHONY: all
-all: $(ALL_TARGETS)
-
-.PHONY: build
-build: $(BUILD_TARGETS)
-
-.PHONY: check
-check: $(CHECK_TARGETS)
+-include $(SOURCE_DIR)/make/*.mk
+-include $(MODULE_DIR)/*/Makefile
+-include config/Makefile
 
 .PHONY: clean
 clean: $(CLEAN_TARGETS)
@@ -47,6 +38,3 @@ test: $(TEST_TARGETS)
 
 .PHONY: update
 update: $(UPDATE_TARGETS)
-
-include config/Makefile.d/*/task.mk
--include config/task.mk
