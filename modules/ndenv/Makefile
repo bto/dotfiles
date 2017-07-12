@@ -26,5 +26,5 @@ ndenv-update:
 $(NDENV_DIR):
 	git clone $(NDENV_REPO) $@
 
-$(NODE_BUILD_DIR): $(NDENV_DIR)
+$(NODE_BUILD_DIR):
 	git clone $(NODE_BUILD_REPO) $@
