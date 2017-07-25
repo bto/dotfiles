@@ -1,0 +1,3 @@
+[ -f $DOTFILES_DIR/var/vendor/z/z.sh ] || return
+
+source $DOTFILES_DIR/var/vendor/z/z.sh
