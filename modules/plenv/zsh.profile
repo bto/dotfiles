@@ -1,1 +1,4 @@
-_glob_add_path_env PATH "${HOME}/.plenv/bin"
+path=(
+    ${HOME}/.plenv/bin(N-/)
+    $path
+)

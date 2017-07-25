@@ -1,5 +1,9 @@
 # PATH
-_glob_add_path_env PATH "/usr/local/java/*/bin" "/usr/java/*/bin"
+path=(
+    /usr/local/java/*/bin(N-/)
+    /usr/java/*/bin(N-/)
+    $path
+)
 
 # JAVA_HOME
 for x in {/usr/local,/usr}/java/jdk /opt/jdk*; do

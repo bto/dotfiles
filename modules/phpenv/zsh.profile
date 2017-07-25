@@ -1,1 +1,4 @@
-_glob_add_path_env PATH "${HOME}/.phpenv/bin"
+path=(
+    ${HOME}/.phpenv/bin(N-/)
+    $path
+)

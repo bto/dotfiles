@@ -1,1 +1,4 @@
-_glob_add_path_env PATH $HOME/.nodebrew/current/bin
+path=(
+    $HOME/.nodebrew/current/bin(N-/)
+    $path
+)

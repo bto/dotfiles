@@ -1,1 +1,4 @@
-_glob_add_path_env PATH "${HOME}/.rbenv/bin"
+path=(
+    ${HOME}/.rbenv/bin(N-/)
+    $path
+)

@@ -1,1 +1,4 @@
-_glob_add_path_env PATH "${HOME}/.pyenv/bin"
+path=(
+    ${HOME}/.pyenv/bin(N-/)
+    $path
+)
