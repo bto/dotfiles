@@ -1,0 +1,3 @@
+[ -f $DOTFILES_DIR/var/vendor/zaw/zaw.zsh ] || return
+
+source $DOTFILES_DIR/var/vendor/zaw/zaw.zsh
