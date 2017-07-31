@@ -1,7 +1,1 @@
-path=(
-    ${HOME}/sbin(N-/)
-    ${HOME}/bin(N-/)
-    ${HOME}/opt/*/sbin(N-/)
-    ${HOME}/opt/*/bin(N-/)
-    $path
-)
+source $(dirname ${(%):-%N})/../profile.d/path.d/home.zsh
