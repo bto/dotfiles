@@ -1,8 +1,6 @@
-__dir__=$(dirname ${(%):-%N})
+source $(dirname ${(%):-%N})/var/init.zsh
 
-source $__dir__/var/init.zsh
-
-functions_dir=$__dir__/functions
+functions_dir=$(dirname ${(%):-%N})/functions
 fpath=($fpath $functions_dir(N-/))
 for f in $functions_dir/*; do
     autoload -U $(basename $f)
