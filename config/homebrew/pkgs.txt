@@ -1,5 +1,6 @@
 autoconf
 automake
+ccze
 coreutils
 direnv
 findutils
