@@ -5,7 +5,6 @@ coreutils
 direnv
 findutils
 gnu-sed
-go
 heroku
 libyaml
 mcrypt
