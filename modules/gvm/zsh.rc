@@ -1,4 +1,4 @@
-if [ ! -d $GVM_ROOT ]; then
+if [ ! -d "$GVM_ROOT" ]; then
     return
 fi
 
