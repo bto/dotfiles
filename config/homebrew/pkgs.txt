@@ -4,6 +4,7 @@ ccze
 coreutils
 direnv
 findutils
+git
 gnu-sed
 go@1.4
 heroku
