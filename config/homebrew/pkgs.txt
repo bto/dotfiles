@@ -8,6 +8,7 @@ git
 gnu-sed
 go@1.4
 heroku
+jq
 libyaml
 mcrypt
 memcached
