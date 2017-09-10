@@ -10,3 +10,6 @@ indent_size = 4
 
 [*.plist]
 indent_style = tab
+
+[Makefile]
+indent_style = tab
