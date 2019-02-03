@@ -1,3 +1,5 @@
+fpath=($DOTFILES_DIR/var/zsh/functions(N-/) $fpath)
+
 for d in $DOTFILES_DIR/modules/*/functions(N-/); do
     fpath=($d $fpath)
     for f in $d/*(N-.); do
