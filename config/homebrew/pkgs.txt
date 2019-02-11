@@ -6,8 +6,7 @@ direnv
 findutils
 git
 gnu-sed
-go@1.4
-heroku
+go
 jq
 libyaml
 mcrypt
@@ -18,6 +17,7 @@ nginx
 nkf
 openssl
 peco
+pstree
 pv
 pwgen
 reattach-to-user-namespace
