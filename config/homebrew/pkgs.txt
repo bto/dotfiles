@@ -27,5 +27,6 @@ source-highlight
 the_silver_searcher
 tmux
 unar
+watch
 wget
 youtube-dl
