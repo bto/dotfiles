@@ -2,10 +2,12 @@
 :set fenc=utf-8
 :set fencs=utf-8,iso-2022-jp,euc-jp,cp932
 
+:set modeline
+
 cnoremap <C-A>         <Home>
-cnoremap <C-B>         <Left>          
-cnoremap <C-D>         <Del>           
-cnoremap <C-E>         <End>           
+cnoremap <C-B>         <Left>
+cnoremap <C-D>         <Del>
+cnoremap <C-E>         <End>
 cnoremap <C-F>         <Right>
 cnoremap <C-N>         <Down>
 cnoremap <C-P>         <Up>
