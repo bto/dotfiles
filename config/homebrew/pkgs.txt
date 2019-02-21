@@ -5,6 +5,7 @@ ccze
 coreutils
 direnv
 findutils
+ghq
 git
 gnu-sed
 go
