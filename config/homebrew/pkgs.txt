@@ -9,6 +9,7 @@ ghq
 git
 gnu-sed
 go
+jo
 jq
 libyaml
 mcrypt
