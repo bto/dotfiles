@@ -12,6 +12,7 @@ go
 jo
 jq
 libyaml
+libzip
 mcrypt
 memcached
 mobile-shell
