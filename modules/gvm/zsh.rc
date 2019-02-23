@@ -1,7 +1,0 @@
-if [ ! -d "$GVM_ROOT" ]; then
-    return
-fi
-
-autoload bashcompinit
-bashcompinit
-source $GVM_ROOT/scripts/completion
