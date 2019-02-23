@@ -17,11 +17,13 @@ mobile-shell
 mysql
 nginx
 nkf
+nodenv
 openssl
 peco
 pstree
 pv
 pwgen
+rbenv
 reattach-to-user-namespace
 ricty
 source-highlight
