@@ -31,3 +31,4 @@ unar
 watch
 wget
 youtube-dl
+zsh
