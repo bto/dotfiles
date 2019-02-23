@@ -1,41 +1,15 @@
-PHPENV_MODULE_DIR := $(call get-current-dir)
 PHPENV_DIR = ~/.phpenv
-PHPENV_INSTALL_SH = https://raw.githubusercontent.com/CHH/phpenv/master/bin/phpenv-install.sh
-
-PHP_BUILD_DIR = $(PHPENV_DIR)/plugins/php-build
-PHP_BUILD_REPO = git://github.com/CHH/php-build.git
-
-PECL_BUILD_DIR = $(PHPENV_DIR)/plugins/pecl-build
-PECL_BUILD_REPO = git://github.com/crocos/pecl-build.git
-PHP_BUILD_DEFINITIONS_FILES = \
-  $(addprefix \
-    $(PHP_BUILD_DIR)/share/php-build/definitions/, \
-    $(notdir $(wildcard $(PHPENV_MODULE_DIR)/php-build/definitions/*)) \
-  )
+PHPENV_INSTALL_SH = https://raw.githubusercontent.com/phpenv/phpenv-installer/master/bin/phpenv-installer
 
 DISTCLEAN_TARGETS += phpenv-distclean
 INSTALL_TARGETS += phpenv-install
-UPDATE_TARGETS += phpenv-update
 
 .PHONY: phpenv-distclean
 phpenv-distclean:
 	rm -rf $(PHPENV_DIR)
 
 .PHONY: phpenv-install
-phpenv-install: $(PHPENV_DIR) $(PHP_BUILD_DIR) $(PHP_BUILD_DEFINITIONS_FILES) $(PECL_BUILD_DIR)
-
-.PHONY: phpenv-update
-phpenv-update:
-	cd $(PHP_BUILD_DIR) && git fetch -p && git pull
+phpenv-install: $(PHPENV_DIR)
 
 $(PHPENV_DIR):
 	$(HTTP_CLIENT) $(PHPENV_INSTALL_SH) | bash
-
-$(PHP_BUILD_DIR):
-	git clone $(PHP_BUILD_REPO) $@
-
-$(PHP_BUILD_DIR)/share/php-build/definitions/%: $(PHPENV_MODULE_DIR)/php-build/definitions/% $(PHP_BUILD_DIR)
-	cp $< $@
-
-$(PECL_BUILD_DIR):
-	git clone $(PECL_BUILD_REPO) $@
