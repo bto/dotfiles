@@ -24,6 +24,7 @@ pstree
 pv
 pwgen
 rbenv
+re2c
 reattach-to-user-namespace
 ricty
 source-highlight
