@@ -1,3 +1,4 @@
-[ -f $DOTFILES_DIR/var/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] || return
-
-source $DOTFILES_DIR/var/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+f=$DOTFILES_VENDOR_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f $f ]; then
+    source $f
+fi

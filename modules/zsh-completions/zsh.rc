@@ -1,4 +1,4 @@
 fpath=(
-    $DOTFILES_DIR/var/vendor/zsh-completions/src(N-/)
+    $DOTFILES_VENDOR_DIR/zsh-completions/src(N-/)
     $fpath
 )

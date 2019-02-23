@@ -1,3 +1,4 @@
-[ -f $DOTFILES_DIR/var/vendor/zaw/zaw.zsh ] || return
-
-source $DOTFILES_DIR/var/vendor/zaw/zaw.zsh
+f=$DOTFILES_VENDOR_DIR/zaw/zaw.zsh
+if [ -f $f ]; then
+    source $f
+fi
