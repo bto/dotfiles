@@ -1,6 +1,7 @@
 autoconf
 automake
 binutils
+bison
 ccze
 coreutils
 direnv
