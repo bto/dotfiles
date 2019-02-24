@@ -1,11 +1,5 @@
-fpath=($DOTFILES_ZSH_FUNCTIONS_DIR(N-/) $fpath)
-
-for d in $DOTFILES_DIR/modules/*/functions(N-/); do
-    fpath=($d $fpath)
-    for f in $d/*(N-.); do
-        autoload -U $(basename $f)
-    done
-done
+_add_functions $DOTFILES_ZSH_FUNCTIONS_DIR(N-/)
+_add_functions $DOTFILES_DIR/modules/*/functions(N-/)
 
 _sources $DOTFILES_SOURCE_DIR/zsh/zshrc.d/*.zsh(N-.)
 _sources $DOTFILES_DIR/modules/*/zshrc.zsh(N-.)

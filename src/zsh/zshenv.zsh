@@ -7,10 +7,10 @@ DOTFILES_VENDOR_DIR=$DOTFILES_VAR_DIR/vendor
 DOTFILES_ZSH_DIR=$DOTFILES_VAR_DIR/zsh
 DOTFILES_ZSH_FUNCTIONS_DIR=$DOTFILES_ZSH_DIR/functions
 
-functions_dir=$DOTFILES_SOURCE_DIR/zsh/functions
-fpath=($fpath $functions_dir(N-/))
-for f in $functions_dir/*; do
-    autoload -U $(basename $f)
+dir=$DOTFILES_SOURCE_DIR/zsh/functions
+fpath=($fpath $dir(N-/))
+for file in $dir/*(N-.); do
+    autoload -U $(basename $file)
 done
 
 _sources ~/.zsh?*/.zshenv(N-.)
