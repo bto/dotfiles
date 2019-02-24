@@ -1,4 +1,4 @@
-Z_DIR = $(VENDOR_DIR)/z
+Z_DIR = $(ZSH_VENDOR_DIR)/z
 Z_REPO = git://github.com/rupa/z.git
 
 DISTCLEAN_TARGETS += z-distclean

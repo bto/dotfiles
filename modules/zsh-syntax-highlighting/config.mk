@@ -1,4 +1,4 @@
-ZSH_SYNTAX_HIGHLIGHTING_DIR = $(VENDOR_DIR)/zsh-syntax-highlighting
+ZSH_SYNTAX_HIGHLIGHTING_DIR = $(ZSH_VENDOR_DIR)/zsh-syntax-highlighting
 ZSH_SYNTAX_HIGHLIGHTING_REPO = git://github.com/zsh-users/zsh-syntax-highlighting.git
 
 DISTCLEAN_TARGETS += zsh-syntax-highlighting-distclean

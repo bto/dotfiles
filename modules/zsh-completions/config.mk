@@ -1,4 +1,4 @@
-ZSH_COMPLETIONS_DIR = $(VENDOR_DIR)/zsh-completions
+ZSH_COMPLETIONS_DIR = $(ZSH_VENDOR_DIR)/zsh-completions
 ZSH_COMPLETIONS_REPO = git://github.com/zsh-users/zsh-completions.git
 
 DISTCLEAN_TARGETS += zsh-completions-distclean

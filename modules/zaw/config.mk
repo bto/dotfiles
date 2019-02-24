@@ -1,4 +1,4 @@
-ZAW_DIR = $(VENDOR_DIR)/zaw
+ZAW_DIR = $(ZSH_VENDOR_DIR)/zaw
 ZAW_REPO = git://github.com/zsh-users/zaw.git
 
 DISTCLEAN_TARGETS += zaw-distclean

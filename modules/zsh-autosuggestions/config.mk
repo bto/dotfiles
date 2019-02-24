@@ -1,4 +1,4 @@
-ZSH_AUTOSUGGESTIONS_DIR = $(VENDOR_DIR)/zsh-autosuggestions
+ZSH_AUTOSUGGESTIONS_DIR = $(ZSH_VENDOR_DIR)/zsh-autosuggestions
 ZSH_AUTOSUGGESTIONS_REPO = git://github.com/zsh-users/zsh-autosuggestions.git
 
 DISTCLEAN_TARGETS += zsh-autosuggestions-distclean
