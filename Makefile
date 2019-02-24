@@ -17,6 +17,7 @@ TEST_TARGETS +=
 UPDATE_TARGETS +=
 
 -include $(SOURCE_DIR)/make/*.mk
+-include $(SOURCE_DIR)/zsh/*.mk
 -include $(MODULE_DIR)/*/*.mk
 -include config/*.mk
 
