@@ -1,5 +1,5 @@
 dir=/Applications/Docker.app/Contents/Resources/etc
-fdir=$DOTFILES_ZSH_FUNCTIONS_DIR
+fdir=$ZDOTDIR/functions
 
 [ -d $dir ] || return
 [ -f $fdir/_docker ]         || ln -s $dir/docker.zsh-completion         $fdir/_docker

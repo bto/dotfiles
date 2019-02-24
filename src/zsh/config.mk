@@ -14,6 +14,8 @@ zsh-initialize: $(ZSH_DOT_DIR) $(ZSH_DOT_ZSHENV)
 
 $(ZSH_DOT_DIR):
 	mkdir -p $@
+	cp -r $(ZSH_SOURCE_DIR)/init.dot.zsh/* $@
+	chmod 755 $@/functions
 	ln -sf $(ZSH_SOURCE_DIR)/zlogin.zsh $(ZSH_DOT_DIR)/.zlogin
 	ln -sf $(ZSH_SOURCE_DIR)/zlogout.zsh $(ZSH_DOT_DIR)/.zlogout
 	ln -sf $(ZSH_SOURCE_DIR)/zprofile.zsh $(ZSH_DOT_DIR)/.zprofile
