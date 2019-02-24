@@ -1,5 +1,5 @@
 _sources $DOTFILES_SOURCE_DIR/zsh/zprofile.d/*.zsh(N-.)
 _sources $DOTFILES_DIR/modules/*/zprofile.zsh(N-.)
-_sources $DOTFILES_SOURCE_DIR/zsh/zprofile.d-post/*.zsh(N-.)
+_sources $DOTFILES_SOURCE_DIR/zsh/zprofile.post.d/*.zsh(N-.)
 _sources $ZDOTDIR/zprofile.zsh(N-.)
 _sources $ZDOTDIR/zprofile.d/*.zsh(N-.)
