@@ -1,3 +1,3 @@
 _command_exists peco || return
 
-_sources $(dirname ${(%):-%N})/rc.d/*.zsh(N-.)
+_sources $(dirname ${(%):-%N})/zshrc.d/*.zsh(N-.)
