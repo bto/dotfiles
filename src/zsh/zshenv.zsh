@@ -11,4 +11,5 @@ for file in $dir/*(N-.); do
     autoload -U $(basename $file)
 done
 
-_sources ~/.zsh?*/.zshenv(N-.)
+_sources $ZDOTDIR/zshenv.zsh(N-.)
+_sources $ZDOTDIR/zshenv.d/*.zsh(N-.)
