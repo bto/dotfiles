@@ -17,7 +17,7 @@ TEST_TARGETS +=
 UPDATE_TARGETS +=
 
 -include $(SOURCE_DIR)/make/*.mk
--include $(MODULE_DIR)/*/Makefile
+-include $(MODULE_DIR)/*/*.mk
 -include config/*.mk
 
 .PHONY: clean
