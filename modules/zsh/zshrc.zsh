@@ -7,7 +7,7 @@ for d in $DOTFILES_DIR/modules/*/functions(N-/); do
     done
 done
 
-_sources $DOTFILES_MODULE_DIR/zsh/rc.d/*.zsh(N-.)
+_sources $DOTFILES_MODULE_DIR/zsh/zshrc.d/*.zsh(N-.)
 _sources $DOTFILES_DIR/modules/*/zsh.rc(N-.)
 _sources ~/.zsh?*/.zshrc(N-.)
 _sources ~/.zsh?*/rc.d/*.zsh(N-.)
