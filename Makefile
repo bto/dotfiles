@@ -18,7 +18,7 @@ UPDATE_TARGETS +=
 
 -include $(SOURCE_DIR)/make/*.mk
 -include $(MODULE_DIR)/*/Makefile
--include config/Makefile
+-include config/*.mk
 
 .PHONY: clean
 clean: $(CLEAN_TARGETS)
