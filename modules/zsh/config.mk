@@ -1,15 +1,21 @@
 ZSH_MODULE_DIR := $(call get-current-dir)
-ZSH_VAR_DIR = $(ZSH_MODULE_DIR)/dot.zsh/var
-ZSH_INIT_SCRIPT = $(ZSH_VAR_DIR)/init.zsh
+ZSH_DOT_DIR = ~/.zsh
 
-CLEAN_TARGETS += zsh-clean
+DISTCLEAN_TARGETS += zsh-distclean
 INITIALIZE_TARGETS += zsh-initialize
 
-zsh-clean:
-	rm -f $(ZSH_INIT_SCRIPT)
+.PHONY: zsh-distclean
+zsh-distclean:
+	rm -rf $(ZSH_DOT_DIR)
 
-zsh-initialize: $(ZSH_INIT_SCRIPT)
+.PHONY: zsh-initialize
+zsh-initialize: $(ZSH_DOT_DIR)
 
-$(ZSH_INIT_SCRIPT):
-	mkdir -p $(@D)
-	echo export DOTFILES_DIR=$(TOP_DIR) > $@
+$(ZSH_DOT_DIR):
+	mkdir -p $@
+	ln -sf $(ZSH_MODULE_DIR)/zlogin.zsh $(ZSH_DOT_DIR)/.zlogin
+	ln -sf $(ZSH_MODULE_DIR)/zlogout.zsh $(ZSH_DOT_DIR)/.zlogout
+	ln -sf $(ZSH_MODULE_DIR)/zprofile.zsh $(ZSH_DOT_DIR)/.zprofile
+	ln -sf $(ZSH_MODULE_DIR)/zshenv.zsh $(ZSH_DOT_DIR)/.zshenv
+	ln -sf $(ZSH_MODULE_DIR)/zshrc.zsh $(ZSH_DOT_DIR)/.zshrc
+	echo export DOTFILES_DIR=$(TOP_DIR) > $(ZSH_DOT_DIR)/init.zsh
