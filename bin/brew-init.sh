@@ -8,5 +8,3 @@ done < $CONFIG_HOMEBREW_DIR/taps.txt
 while read pkg; do
     brew install $pkg
 done < $CONFIG_HOMEBREW_DIR/pkgs.txt
-
-brew link openssl --force
