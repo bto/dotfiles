@@ -3,6 +3,7 @@ automake
 binutils
 bison
 ccze
+colordiff
 coreutils
 direnv
 findutils
