@@ -5,6 +5,7 @@ bison
 ccze
 colordiff
 coreutils
+ctags
 direnv
 findutils
 git
