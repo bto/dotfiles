@@ -14,6 +14,9 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
+" enable mouse
+" :set mouse=a
+
 " encoding auto detection
 :set enc=utf-8
 :set fenc=utf-8
