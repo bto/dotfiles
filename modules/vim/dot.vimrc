@@ -1,5 +1,12 @@
+" Get the default settings
+source $VIMRUNTIME/defaults.vim
+
 " enable vim features
 set nocompatible
+
+" search
+set hlsearch
+set incsearch
 
 " enable syntax
 syntax enable
