@@ -16,6 +16,7 @@ jo
 jq
 libyaml
 libzip
+llvm
 mcrypt
 memcached
 mobile-shell
