@@ -14,7 +14,7 @@ z-install: $(Z_DIR)
 
 .PHONY: z-update
 z-update:
-	cd $(Z_DIR) && git fetch -p && git pull
+	cd $(Z_DIR) && git fetch -p && git merge
 
 $(Z_DIR):
 	git clone $(Z_REPO) $@

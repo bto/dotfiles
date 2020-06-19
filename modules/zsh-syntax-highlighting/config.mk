@@ -14,7 +14,7 @@ zsh-syntax-highlighting-install: $(ZSH_SYNTAX_HIGHLIGHTING_DIR)
 
 .PHONY: zsh-syntax-highlighting-update
 zsh-syntax-highlighting-update:
-	cd $(ZSH_SYNTAX_HIGHLIGHTING_DIR) && git fetch -p && git pull
+	cd $(ZSH_SYNTAX_HIGHLIGHTING_DIR) && git fetch -p && git merge
 
 $(ZSH_SYNTAX_HIGHLIGHTING_DIR):
 	git clone $(ZSH_SYNTAX_HIGHLIGHTING_REPO) $@

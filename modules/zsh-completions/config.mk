@@ -14,7 +14,7 @@ zsh-completions-install: $(ZSH_COMPLETIONS_DIR)
 
 .PHONY: zsh-completions-update
 zsh-completions-update:
-	cd $(ZSH_COMPLETIONS_DIR) && git fetch -p && git pull
+	cd $(ZSH_COMPLETIONS_DIR) && git fetch -p && git merge
 
 $(ZSH_COMPLETIONS_DIR):
 	git clone $(ZSH_COMPLETIONS_REPO) $@

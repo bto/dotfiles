@@ -14,7 +14,7 @@ zaw-install: $(ZAW_DIR)
 
 .PHONY: zaw-update
 zaw-update:
-	cd $(ZAW_DIR) && git fetch -p && git pull
+	cd $(ZAW_DIR) && git fetch -p && git merge
 
 $(ZAW_DIR):
 	git clone $(ZAW_REPO) $@

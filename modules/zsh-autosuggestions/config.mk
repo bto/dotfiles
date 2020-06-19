@@ -14,7 +14,7 @@ zsh-autosuggestions-install: $(ZSH_AUTOSUGGESTIONS_DIR)
 
 .PHONY: zsh-autosuggestions-update
 zsh-autosuggestions-update:
-	cd $(ZSH_AUTOSUGGESTIONS_DIR) && git fetch -p && git pull
+	cd $(ZSH_AUTOSUGGESTIONS_DIR) && git fetch -p && git merge
 
 $(ZSH_AUTOSUGGESTIONS_DIR):
 	git clone $(ZSH_AUTOSUGGESTIONS_REPO) $@

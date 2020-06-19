@@ -14,7 +14,7 @@ oh-my-zsh-install: $(OH_MY_ZSH_DIR)
 
 .PHONY: oh-my-zsh-update
 oh-my-zsh-update:
-	cd $(OH_MY_ZSH_DIR) && git fetch -p && git pull
+	cd $(OH_MY_ZSH_DIR) && git fetch -p && git merge
 
 $(OH_MY_ZSH_DIR):
 	git clone $(OH_MY_ZSH_REPO) $@

@@ -20,8 +20,8 @@ plenv-install: $(PLENV_DIR) $(PERL_BUILD_DIR)
 
 .PHONY: plenv-update
 plenv-update:
-	cd $(PLENV_DIR) && git fetch -p && git pull
-	cd $(PERL_BUILD_DIR) && git fetch -p && git pull
+	cd $(PLENV_DIR) && git fetch -p && git merge
+	cd $(PERL_BUILD_DIR) && git fetch -p && git merge
 
 $(PLENV_DIR):
 	git clone $(PLENV_REPO) $@
