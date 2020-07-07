@@ -32,7 +32,6 @@ pwgen
 rbenv
 re2c
 reattach-to-user-namespace
-ricty
 source-highlight
 the_silver_searcher
 tmux
