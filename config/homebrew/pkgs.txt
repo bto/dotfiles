@@ -31,7 +31,6 @@ pv
 pwgen
 rbenv
 re2c
-reattach-to-user-namespace
 source-highlight
 the_silver_searcher
 tmux
